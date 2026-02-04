@@ -81,6 +81,10 @@ app.use('/api/v1/contact', contactRoutes);
 app.use('/api/v1/categories', categoryRoutes);
 app.use('/api/v1/loyalty', loyaltyRoutes); // <-- Loyalty Routes
 
+app.get('/', (req, res) => {
+  res.status(200).send('UrbanDrive API is running...');
+});
+
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
