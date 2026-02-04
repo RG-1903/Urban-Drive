@@ -37,7 +37,7 @@ app.use(helmet());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: ['http://localhost:5173', 'https://urban-drive-pi.vercel.app'],
   credentials: true
 }));
 
