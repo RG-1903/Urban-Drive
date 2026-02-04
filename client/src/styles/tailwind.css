@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #ffffff; /* white */
+    --color-foreground: #0f172a; /* slate-900 */
+    --color-border: rgba(0, 0, 0, 0.08); /* transparent black */
+    --color-input: #f1f5f9; /* slate-100 */
+    --color-ring: #475569; /* slate-600 (NEW) */
+
+    /* Card Colors */
+    --color-card: #ffffff; /* white */
+    --color-card-foreground: #0f172a; /* slate-900 */
+
+    /* Popover Colors */
+    --color-popover: #ffffff; /* white */
+    --color-popover-foreground: #0f172a; /* slate-900 */
+
+    /* Muted Colors */
+    --color-muted: #f1f5f9; /* slate-100 */
+    --color-muted-foreground: #64748b; /* slate-500 */
+
+    /* Primary Colors */
+    --color-primary: #0f172a; /* slate-900 (NEW - Dark) */
+    --color-primary-foreground: #ffffff; /* white */
+
+    /* Secondary Colors */
+    --color-secondary: #f8f9fa; /* gray-50 */
+    --color-secondary-foreground: #0f172a; /* slate-9G00 */
+
+    /* Accent Colors */
+    --color-accent: #475569; /* slate-600 (NEW - Neutral) */
+    --color-accent-foreground: #ffffff; /* white */
+
+    /* Destructive Colors */
+    --color-destructive: #dc2626; /* red-600 */
+    --color-destructive-foreground: #ffffff; /* white */
+
+    /* Success Colors (Functional only) */
+    --color-success: #059669; /* emerald-600 */
+    --color-success-foreground: #ffffff; /* white */
+
+    /* Warning Colors (Functional only) */
+    --color-warning: #d97706; /* amber-600 */
+    --color-warning-foreground: #ffffff; /* white */
+
+    /* Error Colors */
+    --color-error: #dc2626; /* red-600 */
+    --color-error-foreground: #ffffff; /* white */
+
+    /* Surface Colors */
+    --color-surface: #f1f5f9; /* slate-100 */
+    --color-surface-foreground: #0f172a; /* slate-900 */
+
+    /* Text Colors */
+    --color-text-primary: #0f172a; /* slate-900 */
+    --color-text-secondary: #64748b; /* slate-500 */
+
+    /* Brand Specific Colors */
+    --color-brand-charcoal: #1a1a1a; /* gray-900 */
+    --color-brand-canvas: #f8f9fa; /* gray-50 */
+    --color-brand-blue: #475569; /* slate-600 (NEW) */
+    --color-brand-green: #34c759; /* green-500 */
+    --color-brand-red: #ff3b30; /* red-500 */
+    --color-brand-gray: #86868b; /* gray-400 */
+  }
+
+  /* THIS IS THE FIX FOR THE DOUBLE RING */
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none !important;
+  }
+
+  input,
+  textarea,
+  select {
+    @apply border border-input;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+  }
+
+  .font-accent {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer components {
+  .cinematic-shadow {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .cinematic-shadow-hover {
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.15), 0 16px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  .premium-blur {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .brand-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary) 0%,
+      var(--color-accent) 100%
+    );
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-smooth {
+    transition: all 0.3s ease-out;
+  }
+
+  .animation-spring {
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+}
