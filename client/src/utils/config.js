@@ -1,1 +1,3 @@
-export const API_URL = 'https://urban-drive-tqez.vercel.app/api/v1';
+export const API_URL = import.meta.env.MODE === 'production'
+    ? '/api/v1'
+    : 'http://localhost:8080/api/v1';
